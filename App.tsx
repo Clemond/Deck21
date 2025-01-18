@@ -1,10 +1,11 @@
-import { Text, View } from "react-native";
+import { View } from "react-native";
 import "./global.css";
+import HomeScreen from "./screens/HomeScreen";
 
 export default function App() {
   return (
-    <View className="bg-green-200 flex-grow justify-center items-center">
-      <Text>Hello world!</Text>
+    <View>
+      <HomeScreen />
     </View>
   );
 }

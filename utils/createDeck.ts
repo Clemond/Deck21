@@ -1,6 +1,6 @@
 import { ICard, Suit, Value } from "../types/ICard";
 
-function createDeck(): ICard[] {
+export function createDeck(): ICard[] {
   const suits: Suit[] = ["Hearts", "Diamonds", "Clubs", "Spades"];
   const values: Value[] = [
     "2",
@@ -21,7 +21,10 @@ function createDeck(): ICard[] {
   const deck: ICard[] = [];
   suits.map((suit) => values.map((value) => deck.push({ suit, value })));
 
-  return deck;
+  return deck.sort(() => Math.random() - 0.5);
+
   // * Use this to shuffle deck:
   // ! deck.sort(() => Math.random() - 0.5);
+  // * Use this to display the deck in order
+  // ! deck;
 }
