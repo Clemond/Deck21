@@ -1,6 +1,6 @@
 import { View, Text, TouchableOpacity } from "react-native";
 import "../global.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { FlatList } from "react-native";
 import { ICard } from "../types/ICard";
 import { createDeck } from "../utils/createDeck";
