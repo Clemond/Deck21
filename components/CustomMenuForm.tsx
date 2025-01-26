@@ -9,7 +9,7 @@ export default function CustomMenuForm() {
     <View className="border p-10 rounded-3xl bg-yellow-500 justify-center items-center ml-16 mr-16">
       <CustomButton
         title="Start Game"
-        buttonFunction={() => navigation.navigate("Home")}
+        buttonFunction={() => navigation.navigate("Game")}
       />
       <CustomButton
         title="Instructions"
