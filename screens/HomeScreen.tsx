@@ -10,7 +10,7 @@ export default function HomeScreen() {
 
   function handleGenerateDeck() {
     const newDeck = createDeck();
-    setDeck(newDeck); // Update the state with the new deck
+    setDeck(newDeck);
   }
 
   return (

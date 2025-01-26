@@ -1,12 +1,14 @@
-import { View } from "react-native";
 import "./global.css";
-import HomeScreen from "./screens/HomeScreen";
-import MenuScreen from "./screens/MenuScreen";
+import RootStack from "./navigation/navigation";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export default function App() {
   return (
-    <View>
-      <MenuScreen />
-    </View>
+    <NavigationContainer>
+      <RootStack />
+    </NavigationContainer>
   );
 }
