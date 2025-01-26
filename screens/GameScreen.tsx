@@ -11,22 +11,15 @@ export default function GameScreen() {
   const [gameOver, setGameOver] = useState(false);
   const [message, setMessage] = useState("");
 
-  // Start the game
   function startGame() {
-    // Reset player and dealer hands
     setPlayerHand([]);
     setDealerHand([]);
-
-    // Create a new shuffled deck
     const newDeck = createDeck();
     setDeck(newDeck);
-
-    // Start with empty hands, no message, and no game over state
     setGameOver(false);
     setMessage("");
   }
 
-  // Player hits
   const hit = () => {
     const newDeck = [...deck];
     const newCard = newDeck.pop()!;
@@ -41,7 +34,6 @@ export default function GameScreen() {
     }
   };
 
-  // Player stands, dealer plays
   const stand = () => {
     let newDealerHand = [...dealerHand];
     while (calculateHandValue(newDealerHand) < 17) {
@@ -52,7 +44,6 @@ export default function GameScreen() {
     checkWinner(newDealerHand);
   };
 
-  // Check the winner
   const checkWinner = (dealerHand: ICard[]) => {
     const playerValue = calculateHandValue(playerHand);
     const dealerValue = calculateHandValue(dealerHand);
@@ -68,7 +59,6 @@ export default function GameScreen() {
     setGameOver(true);
   };
 
-  // Render a card
   const renderCard = ({ item }: { item: ICard }) => (
     <View className="bg-white p-1 mx-2 rounded-lg w-32 shadow-md">
       <Text className="text-center font-semibold text-lg">
