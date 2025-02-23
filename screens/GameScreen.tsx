@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { View, Text, FlatList, Button, ImageBackground } from "react-native";
+import {
+  View,
+  Text,
+  FlatList,
+  Button,
+  ImageBackground,
+  Image
+} from "react-native";
 import { createDeck } from "../utils/createDeck";
 import calculateHandValue from "../utils/calculateHandValue";
 import { ICard } from "../types/ICard";
@@ -60,10 +67,12 @@ export default function GameScreen() {
   };
 
   const renderCard = ({ item }: { item: ICard }) => (
-    <View className="bg-white p-1 mx-2 rounded-lg w-32 shadow-md">
-      <Text className="text-center font-semibold text-lg">
-        {item.value} of {item.suit}
-      </Text>
+    <View className="p-1 mx-2 rounded-lg w-32 shadow-md">
+      <Image
+        source={{ uri: item.image }}
+        className="flex-1"
+        resizeMode="contain"
+      />
     </View>
   );
   const backgroundImage = require("../assets/black-jack-app-bg.jpg");
@@ -81,13 +90,17 @@ export default function GameScreen() {
 
         {/* Player's Hand */}
         <Text className="text-lg text-white font-semibold mb-2">Your Hand</Text>
-        <FlatList
-          data={playerHand}
-          renderItem={renderCard}
-          keyExtractor={(item, index) => `${item.suit}-${item.value}-${index}`}
-          horizontal
-          className="mb-4"
-        />
+        <View className="flex-1">
+          <FlatList
+            data={playerHand}
+            renderItem={renderCard}
+            keyExtractor={(item, index) =>
+              `${item.suit}-${item.value}-${index}`
+            }
+            horizontal
+            className="mb-4"
+          />
+        </View>
         <Text className="text-lg text-white text-center mb-4">
           Your Points: {calculateHandValue(playerHand)}
         </Text>
@@ -96,25 +109,27 @@ export default function GameScreen() {
         <Text className="text-lg text-white font-semibold mb-2">
           Dealer's Hand
         </Text>
-        <FlatList
-          data={dealerHand}
-          renderItem={renderCard}
-          keyExtractor={(item, index) => `${item.suit}-${item.value}-${index}`}
-          horizontal
-          className="mb-4"
-        />
+        <View className="flex-1">
+          <FlatList
+            data={dealerHand}
+            renderItem={renderCard}
+            keyExtractor={(item, index) =>
+              `${item.suit}-${item.value}-${index}`
+            }
+            horizontal
+            className="mb-4"
+          />
+        </View>
         <Text className="text-lg text-white text-center mb-4">
           Dealer's Points: {calculateHandValue(dealerHand)}
         </Text>
 
-        {/* Buttons */}
         <View className="flex-row justify-between mb-4">
           <Button title="Hit" onPress={hit} disabled={gameOver} />
           <Button title="Stand" onPress={stand} disabled={gameOver} />
           <Button title="Restart" onPress={startGame} />
         </View>
 
-        {/* Game Message */}
         <Text className="text-xl text-white font-bold text-center mt-4">
           {message}
         </Text>

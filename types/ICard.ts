@@ -17,4 +17,5 @@ export type Value =
 export interface ICard {
   suit: Suit;
   value: Value;
+  image?: string;
 }
