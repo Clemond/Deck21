@@ -1,5 +1,5 @@
 import { TouchableOpacity, View, Text } from "react-native";
-import GradientColor from "./color/GradleColor";
+import GradientColor from "../color/GradleColor";
 
 export default function CustomButton({
   title,

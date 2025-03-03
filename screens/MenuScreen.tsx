@@ -1,5 +1,5 @@
 import { ImageBackground, View, Text } from "react-native";
-import CustomMenuForm from "../components/CustomMenuForm";
+import CustomMenuForm from "../components/menu/CustomMenuForm";
 
 export default function MenuScreen() {
   const backgroundImage = require("../assets/black-jack-app-bg.jpg");

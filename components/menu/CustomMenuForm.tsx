@@ -1,7 +1,7 @@
 import { View } from "react-native";
-import CustomButton from "./CustomButton";
+import CustomButton from "../buttons/CustomButton";
 import { NavigationProp, useNavigation } from "@react-navigation/native";
-import GradientColor from "./color/GradleColor";
+import GradientColor from "../color/GradleColor";
 
 export default function CustomMenuForm() {
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();

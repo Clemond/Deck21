@@ -1,12 +1,14 @@
 import React from "react";
-import { View, Text, Button, ImageBackground } from "react-native";
+import { View, Text, ImageBackground } from "react-native";
 import calculateHandValue from "../utils/calculateHandValue";
-import UseGame from "../hooks/useBlackjack";
 import Hand from "../components/cards/hand";
+import GameBarMenu from "../components/game/GameBarMenu";
+import UseBlackjack from "../hooks/useBlackjack";
 
 export default function GameScreen() {
   const { stand, startGame, hit, playerHand, dealerHand, gameOver, message } =
-    UseGame();
+    UseBlackjack();
+
   const backgroundImage = require("../assets/black-jack-app-bg.jpg");
 
   return (
@@ -34,11 +36,12 @@ export default function GameScreen() {
           Dealer's Points: {calculateHandValue(dealerHand)}
         </Text>
 
-        <View className="flex-row justify-between mb-4">
-          <Button title="Hit" onPress={hit} disabled={gameOver} />
-          <Button title="Stand" onPress={stand} disabled={gameOver} />
-          <Button title="Restart" onPress={startGame} />
-        </View>
+        <GameBarMenu
+          hit={hit}
+          gameOver={gameOver}
+          stand={stand}
+          startGame={startGame}
+        />
 
         <Text className="text-xl text-white font-bold text-center mt-4">
           {message}
