@@ -1,14 +1,22 @@
+import { View } from "react-native";
 import "./global.css";
 import RootStack from "./navigation/navigation";
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 
-const Stack = createNativeStackNavigator<RootStackParamList>();
+const MyTheme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    background: "black"
+  }
+};
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <RootStack />
-    </NavigationContainer>
+    <View style={{ flex: 1, backgroundColor: "black" }}>
+      <NavigationContainer theme={MyTheme}>
+        <RootStack />
+      </NavigationContainer>
+    </View>
   );
 }
