@@ -7,18 +7,16 @@ export default function RootStack() {
   const Stack = createNativeStackNavigator<RootStackParamList>();
 
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
+    <Stack.Navigator
+      screenOptions={{
+        headerTitle: "",
+        headerShown: true,
+        headerTransparent: true,
+        headerBackVisible: true
+      }}
+    >
       <Stack.Screen name="Menu" component={MenuScreen} />
-      <Stack.Screen
-        options={{
-          headerTitle: "",
-          headerShown: true,
-          headerTransparent: true,
-          headerBackVisible: true
-        }}
-        name="Game"
-        component={GameScreen}
-      />
+      <Stack.Screen name="Game" component={GameScreen} />
       <Stack.Screen name="Instructions" component={InstructionsScreen} />
     </Stack.Navigator>
   );
