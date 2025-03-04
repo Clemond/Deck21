@@ -7,7 +7,7 @@ export default function CustomMenuForm() {
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
 
   return (
-    <View className="rounded-3xl border overflow-hidden">
+    <View className="rounded-3xl border border-white overflow-hidden">
       <GradientColor>
         <View className="p-10 justify-center items-center ">
           <CustomButton

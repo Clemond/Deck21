@@ -19,7 +19,7 @@ export default function GameBarMenu({
           <TouchableOpacity onPress={hit} disabled={gameOver}>
             <Text
               className={`text-xl font-bold  w-24 text-center p-2 rounded-3xl shadow-md ${
-                gameOver ? "text-black/50" : "text-black"
+                gameOver ? "text-black/30" : "text-black"
               }`}
             >
               Hit
@@ -28,7 +28,7 @@ export default function GameBarMenu({
           <TouchableOpacity onPress={stand} disabled={gameOver}>
             <Text
               className={`text-xl font-bold  w-24 text-center p-2 rounded-3xl shadow-md ${
-                gameOver ? "text-black/50" : "text-black"
+                gameOver ? "text-black/30" : "text-black"
               }`}
             >
               Stand

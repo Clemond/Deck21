@@ -8,13 +8,13 @@ export default function MenuScreen() {
     <ImageBackground
       source={backgroundImage}
       resizeMode="cover"
-      className="h-screen"
+      className="flex-1"
     >
-      <View className="absolute top-0 w-full items-center mt-32 ">
-        <Text className="text-white text-9xl font-thin">Deck21</Text>
+      <View className="items-center mt-20 ">
+        <Text className="text-white text-[100px] font-thin">Deck21</Text>
       </View>
 
-      <View className="absolute inset-0 justify-center items-center">
+      <View className=" flex-1 absolute inset-0 justify-center items-center">
         <CustomMenuForm />
       </View>
     </ImageBackground>
