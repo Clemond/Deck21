@@ -17,7 +17,7 @@ export default function GameScreen() {
       resizeMode="cover"
       className="h-screen"
     >
-      <View className="flex-1  p-4">
+      <View className="flex-1  p-4 mt-2">
         <Text className="text-2xl font-bold text-white text-center mb-4 mt-12">
           Blackjack Game
         </Text>

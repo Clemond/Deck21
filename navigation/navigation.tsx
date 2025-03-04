@@ -8,7 +8,16 @@ export default function RootStack() {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Menu" component={MenuScreen} />
-      <Stack.Screen name="Game" component={GameScreen} />
+      <Stack.Screen
+        options={{
+          headerTitle: "",
+          headerShown: true,
+          headerTransparent: true,
+          headerBackVisible: true
+        }}
+        name="Game"
+        component={GameScreen}
+      />
     </Stack.Navigator>
   );
 }
