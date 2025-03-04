@@ -16,7 +16,7 @@ export default function CustomMenuForm() {
           />
           <CustomButton
             title="Instructions"
-            buttonFunction={() => console.log("Pressed Instructions")}
+            buttonFunction={() => navigation.navigate("Instructions")}
           />
           <CustomButton
             title="Settings"
